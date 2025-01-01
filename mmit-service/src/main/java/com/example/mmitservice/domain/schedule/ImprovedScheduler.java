@@ -9,7 +9,7 @@ import org.springframework.stereotype.Service;
 @Service
 @RequiredArgsConstructor
 @EnableScheduling
-public class ExampleScheduler {
+public class ImprovedScheduler {
     private final SomeJob someJob;
 
     @Scheduled(cron = "0 */1 * * * *")

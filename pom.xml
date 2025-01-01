@@ -21,6 +21,7 @@
         <module>mmit-client</module>
         <module>mmit-service</module>
         <module>mmit-common</module>
+        <module>mmit-integration-test</module>
     </modules>
 
     <properties>

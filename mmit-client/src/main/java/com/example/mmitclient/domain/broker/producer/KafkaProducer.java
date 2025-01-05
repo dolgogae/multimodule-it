@@ -11,11 +11,7 @@ import org.springframework.stereotype.Service;
 public class KafkaProducer {
     private final StreamBridge streamBridge;
 
-    public boolean sendMessage(){
-        TaskDto taskDto = TaskDto.builder()
-                .taskType(TaskType.CLIENT_SERVICE_MESSAGE_ADD)
-                .payload("message")
-                .build();
-        return streamBridge.send("sendService-out-0", taskDto);
+    public boolean sendMessage(TaskDto taskDto){
+        return streamBridge.send("sendMessage-out-0", taskDto);
     }
 }

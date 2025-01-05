@@ -9,7 +9,6 @@ spring:
       bindings:
         receiveMessage-in-0:
           destination: client-service-topic
-          contentType: application/json
       kafka:
         binder:
           brokers: localhost:9092

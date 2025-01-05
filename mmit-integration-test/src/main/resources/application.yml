@@ -1,0 +1,23 @@
+spring:
+  application:
+    name: mmit-integration-test
+  cloud:
+    stream:
+      default-binder: kafka
+      function:
+        definition: receiveMessage
+      bindings:
+        receiveMessage-in-0:
+          destination: service-client-topic
+          contentType: application/json
+      kafka:
+        binder:
+          brokers: localhost:9092
+          autoCreateTopics: true
+          minPartitionCount: 1
+          configuration:
+            key.serializer: org.apache.kafka.common.serialization.StringSerializer
+            value.serializer: org.apache.kafka.common.serialization.StringSerializer
+            key.deserializer: org.apache.kafka.common.serialization.StringDeserializer
+            value.deserializer: org.apache.kafka.common.serialization.StringDeserializer
+            auto.offset.reset: earliest

@@ -1,0 +1,17 @@
+spring:
+  application:
+    name: mmit-service
+  cloud:
+    stream:
+      default-binder: kafka
+      function:
+        definition: receiveMessage
+      bindings:
+        receiveMessage-in-0:
+          destination: client-service-topic
+          contentType: application/json
+      kafka:
+        binder:
+          brokers: localhost:9092
+          autoCreateTopics: true
+          minPartitionCount: 1

@@ -6,7 +6,7 @@
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
         <version>3.1.4</version>
-        <relativePath/> <!-- lookup parent from repository -->
+        <relativePath/>
     </parent>
 
     <groupId>com.example</groupId>
@@ -18,15 +18,15 @@
     <description>multimodule-it</description>
 
     <modules>
+        <module>mmit-common</module>
         <module>mmit-client</module>
         <module>mmit-service</module>
-        <module>mmit-common</module>
         <module>mmit-integration-test</module>
     </modules>
 
     <properties>
         <java.version>17</java.version>
-        <spring-cloud.version>2023.0.2</spring-cloud.version>
+        <spring-cloud.version>2022.0.3</spring-cloud.version>
     </properties>
 
     <dependencyManagement>
@@ -46,10 +46,10 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
-<!--        <dependency>-->
-<!--            <groupId>org.springframework.cloud</groupId>-->
-<!--            <artifactId>spring-cloud-starter-stream-kafka</artifactId>-->
-<!--        </dependency>-->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-stream-kafka</artifactId>
+        </dependency>
 
         <dependency>
             <groupId>org.projectlombok</groupId>
@@ -71,7 +71,6 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.11.0</version>
                 <configuration>
                     <source>${java.version}</source>
                     <target>${java.version}</target>

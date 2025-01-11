@@ -5,10 +5,12 @@ spring:
     stream:
       default-binder: kafka
       function:
-        definition: sendMessage
+        definition: sendMessage;receiveTask
       bindings:
         sendMessage-out-0:
           destination: client-service-topic
+        receiveTask-in-0:
+          destination: service-client-topic
       kafka:
         binder:
           brokers: localhost:9092

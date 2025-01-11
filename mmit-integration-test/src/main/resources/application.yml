@@ -1,16 +1,18 @@
-spring:
-  cloud:
-    stream:
-      default-binder: kafka
-      function:
-        definition: receiveMessage, sendMessage
-      bindings:
-        sendMessage-out-0:
-          destination: client-service-topic
-        receiveMessage-in-0:
-          destination: client-service-topic
-      kafka:
-        binder:
-          brokers: localhost:9092
-          autoCreateTopics: true
-          minPartitionCount: 1
+#spring:
+#  cloud:
+#    stream:
+#      default-binder: kafka
+#      function:
+#        definition: receiveMessage;receiveTask
+#      bindings:
+#        sendMessage-out-0:
+#          destination: client-service-topic
+#        receiveMessage-in-0:
+#          destination: client-service-topic
+#        receiveTask-in-0:
+#          destination: service-client-topic
+#      kafka:
+#        binder:
+#          brokers: localhost:9092
+#          autoCreateTopics: true
+#          minPartitionCount: 1

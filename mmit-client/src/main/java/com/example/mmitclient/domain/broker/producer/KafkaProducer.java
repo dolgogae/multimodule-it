@@ -1,7 +1,6 @@
 package com.example.mmitclient.domain.broker.producer;
 
 import com.example.mmitcommon.dto.TaskDto;
-import com.example.mmitcommon.enums.TaskType;
 import lombok.RequiredArgsConstructor;
 import org.springframework.cloud.stream.function.StreamBridge;
 import org.springframework.stereotype.Service;

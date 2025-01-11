@@ -5,9 +5,9 @@ spring:
     stream:
       default-binder: kafka
       function:
-        definition: receiveMessage
+        definition: serviceReceiveMessage
       bindings:
-        receiveMessage-in-0:
+        serviceReceiveMessage-in-0:
           destination: client-service-topic
       kafka:
         binder:

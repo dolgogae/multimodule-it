@@ -1,4 +1,4 @@
-package com.example.mmitservice.domain.broker.consumer;
+package com.example.mmitclient.domain.broker.consumer;
 
 import com.example.mmitcommon.dto.TaskDto;
 import lombok.Getter;
@@ -11,11 +11,12 @@ import java.util.function.Consumer;
 
 @Getter
 @Configuration
-public class KafkaConsumer {
+public class ServiceKafkaConsumer {
+
     private final List<String> consumerList = new ArrayList<>();
 
-    @Bean
-    public Consumer<TaskDto> receiveMessage(){
+    @Bean //(name = "clientReceiveTask")
+    public Consumer<TaskDto> receiveTask(){
         return taskDto -> {
             switch (taskDto.taskType()){
                 case CLIENT_SERVICE_MESSAGE_ADD -> {
